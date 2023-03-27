@@ -1,18 +1,19 @@
 import css from './FeedbackOptions.module.css';
 import PropTypes from 'prop-types';
 
-const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+const FeedbackOptions = ({ options, handleCounterIncrement }) => {
   return (
     <div className={css.Div}>
       <h1>Please leave a feadback</h1>
       <div className={css.feedbackDiv}>
         <ul>
-          {options.map(option => (
+          {Object.keys(options).map(option => (
+
             <button
               key={option}
               name={option}
               type="button"
-              onClick={onLeaveFeedback}
+              onClick={handleCounterIncrement}
             >
               {option}
             </button>
@@ -24,14 +25,8 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 };
 
 FeedbackOptions.propTypes = {
-	options: PropTypes.arrayOf(
-		PropTypes.shape({
-			good: PropTypes.number.isRequired,
-			neutral:PropTypes.number.isRequired,
-			bad:PropTypes.number.isRequired,
-		   })
-	).isRequired,
-	onLeaveFeedback: PropTypes.func.isRequired,
+	options: PropTypes.object,
+	handleCounterIncrement: PropTypes.func.isRequired,
   };
   
 export default FeedbackOptions;
