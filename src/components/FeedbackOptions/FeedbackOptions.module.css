@@ -1,0 +1,11 @@
+.Div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.feedbackDiv{
+	display: flex;
+	padding: 0;
+	align-items: center;
+}

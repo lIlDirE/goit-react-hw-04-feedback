@@ -1,0 +1,9 @@
+.statisticsDiv{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.statisticsP{
+	display: flex	;
+}
